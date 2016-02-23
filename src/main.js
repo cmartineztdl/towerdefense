@@ -1,3 +1,8 @@
+var conf = require('./conf.js');
+var mapGenerator = require('./generators/map.js');
+
+console.log(mapGenerator()); 
+
 //THREEJS RELATED VARIABLES 
 var scene; 
 var camera;
@@ -20,6 +25,7 @@ function init(){
 	aspectRatio = WIDTH / HEIGHT;
 
 	camera = new THREE.PerspectiveCamera(fieldOfView, aspectRatio, nearPlane, farPlane);
+	camera.position.z = 5;
 	
 	renderer = new THREE.WebGLRenderer({
 		antialias: true,
@@ -34,6 +40,7 @@ function init(){
 	
 
 	var geometry = new THREE.BoxGeometry(1, 1, 1);
+	
 	var material = new THREE.MeshPhongMaterial({
 		color: 0xff3300,
 		specular: 0x555555,
@@ -41,7 +48,14 @@ function init(){
 	});
 	var cube = new THREE.Mesh(geometry, material);
 	scene.add(cube);
-	camera.position.z = 5;
+	cube.position.x = 1
+
+	var material2 = new THREE.MeshPhongMaterial({
+		map: THREE.ImageUtils.loadTexture('textures/ground.jpg')
+	});
+	var cube2 = new THREE.Mesh(geometry, material2);
+	scene.add(cube2);
+	cube2.position.x = -1;
 
 	var directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
 	directionalLight.position.set(10, 10, 10);
@@ -54,6 +68,8 @@ function init(){
 	function render() {
 		cube.rotation.x += 0.05;
 		cube.rotation.y += 0.03;
+		cube2.rotation.x += 0.05;
+		cube2.rotation.y += 0.03;
 
 		requestAnimationFrame(render);
 		renderer.render(scene, camera);
