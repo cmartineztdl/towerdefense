@@ -1,3 +1,4 @@
+var THREE = require('./vendor/threejs/three.min.js');
 
 //THREEJS RELATED VARIABLES 
 var scene, 
