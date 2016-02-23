@@ -1,0 +1,22 @@
+{
+  "name": "towerdefense",
+  "version": "1.0.0",
+  "description": "Three.js template\r ==================",
+  "main": "webpack.conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmartineztdl/towerdefense.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmartineztdl/towerdefense/issues"
+  },
+  "homepage": "https://github.com/cmartineztdl/towerdefense#readme",
+  "dependencies": {
+    "webpack": "^1.12.14"
+  }
+}
