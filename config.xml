@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget id="io.cocoon.template.threejs.lion" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cocoon="http://cocoon.io/ns/1.0">
+    <name>Chill The Lion</name>
+    <description>
+        Three.js demo with a cute lion :), based on Karim Maaloul's Chill The Lion demo at http://codepen.io/Yakudoo/pen/YXxmYR
+    </description>
+    <author email="karim.maaloul@gmail.com" href="http://epic.net/">
+        Karim Maaloul
+    </author>
+    
+    <!-- Shown in the wizard -->
+    <icon src="icon.png" />
+
+    <content src="index.html" />
+    <access origin="*"/>
+    
+    <preference name="Orientation" value="default"/>
+    <preference name="Fullscreen" value="true"/>
+
+    <cocoon:plugin name="com.ludei.canvasplus.ios"/>
+    <cocoon:plugin name="com.ludei.canvasplus.android"/>
+</widget>
